@@ -1,0 +1,74 @@
+{
+  "name": "quackbot-advisor",
+  "displayName": "QuackBot_Advisor",
+  "description": "Advice from github and the Amplience engineering handbook",
+  "version": "0.0.1",
+  "icon": "resources/extension-icon.png",
+  "publisher": "zdrenka",
+  "repository": {
+    "url": "https://github.com/Zdrenka/Hackathon2024_QuackBot_Advisor"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "copilot",
+    "openai",
+    "chatgpt",
+    "ai",
+    "explain",
+    "explain ",
+    "refactor"
+  ],
+  "activationEvents": [
+    "onView:chatView"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "QuackbotAdvisor",
+          "title": "Quackbot Advisor",
+          "icon": "resources/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "QuackbotAdvisor": [
+        {
+          "type": "webview",
+          "id": "chatView",
+          "name": "Quackbot Advisor"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "@vscode/test-cli": "^0.0.4",
+    "@vscode/test-electron": "^2.3.8",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "chatgpt": "^5.2.5",
+    "chromadb": "^1.7.3",
+    "openai": "^4.24.1"
+  }
+}
